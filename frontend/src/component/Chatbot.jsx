@@ -135,7 +135,7 @@ const Chatbot = () => {
         onClick={toggleChat}
         className="w-16 h-16 bg-gradient-to-r from-green-600 to-green-700 rounded-full shadow-2xl flex items-center justify-center cursor-pointer hover:scale-110 transition-transform"
       >
-        <img src="/chatbot.png" alt="chat icon" className="w-8 rounded-full h-8" />
+        <img src="/aiveee.jpg" alt="chat icon" className="w-8 rounded-full h-8" />
       </div>
     </div>
   );
