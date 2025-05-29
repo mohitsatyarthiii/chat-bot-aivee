@@ -1,0 +1,13 @@
+{
+  "name": "chatboot",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run setup && npm run start-server",
+    "setup": "cd backend &&  npm install && cd ../frontend && npm install && npm run build",
+    "start-server": "cd backend && npm start"
+  }
+}
