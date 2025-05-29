@@ -45,7 +45,7 @@ const Chatbot = () => {
     setUserInput("");
 
     try {
-      const res = await axios.post("/api/query", {
+      const res = await axios.post("https://chat-bot-backend-4reb.onrender.com/api/query", {
         question: userInput,
       });
 
