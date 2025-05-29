@@ -2,8 +2,13 @@ import express from "express"
 import AWS from "aws-sdk"
 import cors from "cors"
 import bodyParser from "body-parser"
+import path from 'path';
+import { fileURLToPath } from 'url';
 import dotenv from "dotenv"
 dotenv.config();
+
+
+
 
 const app = express();
 app.use(cors(
@@ -11,6 +16,17 @@ app.use(cors(
     credentials:true
 }
 ));
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+})
 
 app.use(bodyParser.json());
 
@@ -104,5 +120,4 @@ app.listen(PORT, () => {
   console.log( `Server running on http://localhost:${PORT}`);
 });
 
-// Express backend me:
-app.use(express.static(path.join(__dirname, '../frontend/build')));
+

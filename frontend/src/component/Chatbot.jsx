@@ -45,7 +45,7 @@ const Chatbot = () => {
     setUserInput("");
 
     try {
-      const res = await axios.post("http://localhost:8000/api/query", {
+      const res = await axios.post("/api/query", {
         question: userInput,
       });
 
